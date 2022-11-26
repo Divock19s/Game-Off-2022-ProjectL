@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Envirment/Moving_Platform-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://MovingPlatform.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 4 )
+
+[node name="MovingPlatform" type="Node2D"]
+position = Vector2( 0, 4 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Platform" type="KinematicBody2D" parent="." groups=["platforms"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

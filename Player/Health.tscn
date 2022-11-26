@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Player/GUI/Hearts-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Player/Health.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Player/GUI/DarkBlue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/GUI/LightBlue.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/GUI/Red.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/GUI/Yellow.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/GUI/Green.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/GUI/Purple.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/GUI/DiamondsBackGround.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/GUI/HeartsBackGround.png" type="Texture" id=10]
+
+[node name="Health" type="Control"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 3, 3 )
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_top = -11.0
+margin_right = 40.0
+margin_bottom = 29.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 0, 7 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Heart_2" type="Sprite" parent="Control"]
+position = Vector2( -0.5, -0.5 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Heart_1" type="Sprite" parent="Control"]
+position = Vector2( 23.5, -0.5 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Tween" type="Tween" parent="Control"]
+
+[node name="Health_Duration" type="Timer" parent="Control"]
+one_shot = true
+
+[node name="Health_Frequency" type="Timer" parent="Control"]
+one_shot = true
+
+[node name="Diamonds" type="Control" parent="."]
+margin_left = -0.666667
+margin_top = 19.0
+margin_right = 39.3337
+margin_bottom = 59.0
+
+[node name="Bg" type="Sprite" parent="Diamonds"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Diamond1" type="Sprite" parent="Diamonds"]
+position = Vector2( 6.16667, 2.66667 )
+texture = ExtResource( 4 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Diamond2" type="Sprite" parent="Diamonds"]
+position = Vector2( 20.1667, 2.66667 )
+texture = ExtResource( 3 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Diamond3" type="Sprite" parent="Diamonds"]
+position = Vector2( 34.1667, 2.66667 )
+texture = ExtResource( 7 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Diamond4" type="Sprite" parent="Diamonds"]
+position = Vector2( 48.1667, 2.66667 )
+texture = ExtResource( 5 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Diamond5" type="Sprite" parent="Diamonds"]
+position = Vector2( 62.1667, 2.66667 )
+texture = ExtResource( 6 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Diamond6" type="Sprite" parent="Diamonds"]
+position = Vector2( 76.1667, 2.66667 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Tween" type="Tween" parent="Diamonds"]
+
+[node name="Diamond_Duration" type="Timer" parent="Diamonds"]
+
+[node name="Diamond_Frequency" type="Timer" parent="Diamonds"]
+one_shot = true
+
+[connection signal="timeout" from="Control/Health_Duration" to="." method="_on_Health_Duration_timeout"]
+[connection signal="timeout" from="Control/Health_Frequency" to="." method="_on_Health_Frequency_timeout"]
+[connection signal="timeout" from="Diamonds/Diamond_Duration" to="." method="_on_Diamond_Duration_timeout"]
+[connection signal="timeout" from="Diamonds/Diamond_Frequency" to="." method="_on_Diamond_Frequency_timeout"]

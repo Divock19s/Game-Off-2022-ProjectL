@@ -1,0 +1,392 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://GUI/Fonts/TinyUnicode.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Player/GUI/TextBox.png" type="Texture" id=2]
+[ext_resource path="res://Assets/intro/End/End24.png" type="Texture" id=3]
+[ext_resource path="res://Assets/intro/End/End25.png" type="Texture" id=4]
+[ext_resource path="res://Assets/intro/End/End23.png" type="Texture" id=5]
+[ext_resource path="res://Assets/intro/End/End22.png" type="Texture" id=6]
+[ext_resource path="res://Assets/intro/End/End26.png" type="Texture" id=7]
+[ext_resource path="res://Assets/intro/End/End2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/intro/End/End5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/intro/End/End1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/intro/End/End3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/intro/End/End6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/intro/End/End7.png" type="Texture" id=13]
+[ext_resource path="res://Assets/intro/End/End8.png" type="Texture" id=14]
+[ext_resource path="res://Assets/intro/End/End4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/intro/End/End12.png" type="Texture" id=16]
+[ext_resource path="res://Assets/intro/End/End13.png" type="Texture" id=17]
+[ext_resource path="res://Assets/intro/End/End15.png" type="Texture" id=18]
+[ext_resource path="res://Assets/intro/End/End14.png" type="Texture" id=19]
+[ext_resource path="res://Assets/intro/End/End16.png" type="Texture" id=20]
+[ext_resource path="res://Assets/intro/End/End18.png" type="Texture" id=21]
+[ext_resource path="res://Assets/intro/End/End19.png" type="Texture" id=22]
+[ext_resource path="res://Assets/intro/End/End17.png" type="Texture" id=23]
+[ext_resource path="res://Assets/intro/End/End20.png" type="Texture" id=24]
+[ext_resource path="res://Assets/intro/End/End21.png" type="Texture" id=25]
+[ext_resource path="res://Assets/intro/End/End11.png" type="Texture" id=26]
+[ext_resource path="res://Assets/intro/End/End9.png" type="Texture" id=27]
+[ext_resource path="res://Assets/intro/End/End10.png" type="Texture" id=28]
+[ext_resource path="res://Maps/end.gd" type="Script" id=29]
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Executing the final phase ProjectL production, after the successfull test of L-98, that proved the ability of injecting artificial emotions" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorRect:material:shader_param/blur")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Label:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 140, 720 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Start"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Executing the final phase of ProjectL production, after the successfull test of L-98, that proved the ability of injecting artificial emotions", "Executing the final phase of ProjectL production, after the successfull test of L-98, that proved the ability of injecting artificial emotions", "And also tested in direct combat with the older model R-01, which was also a great success." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 9, 14.5, 14.9, 15, 18, 25.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.2, 25.4, 27.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 25.4, 27.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect:material:shader_param/blur")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 27.1, 29.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 3.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Label:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 27, 90 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 140, 720 ), Vector2( 140, 720 ), Vector2( 140, -2000 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "bg"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Shader" id=14]
+code = "shader_type canvas_item;
+uniform float blur:hint_range(0.0, 6.0)=0.0;
+void fragment(){
+	vec4 color=texture(SCREEN_TEXTURE,SCREEN_UV,blur);
+	COLOR=color;
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = SubResource( 14 )
+shader_param/blur = 0.0
+
+[sub_resource type="DynamicFont" id=16]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=17]
+default_font = SubResource( 16 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=24]
+default_font = SubResource( 23 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="End" type="Node2D"]
+script = ExtResource( 29 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 15 )
+frame = 9
+playing = true
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 18 )
+anims/Start = SubResource( 19 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 20 )
+anims/bg = SubResource( 21 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.654902, 0.654902, 0.654902, 1 )
+material = SubResource( 22 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 630, 619 )
+texture = ExtResource( 2 )
+hframes = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 528.0
+margin_top = 560.0
+margin_right = 868.0
+margin_bottom = 680.0
+theme = SubResource( 17 )
+visible_characters = 0
+percent_visible = 0.0
+text = "Executing the final phase ProjectL production, after the successfull test of L-98, that proved the ability of injecting artificial emotions"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 140.0
+margin_top = 720.0
+margin_right = 1140.0
+margin_bottom = 2720.0
+theme = SubResource( 24 )
+text = "This game was made for
+the Game Off 2022 jam
+i would like to thank 
+Lee Reilly and GitHub for 
+this occasion, and ofcourse
+special thanks for you 
+the person who managed 
+to finish it, and to all the
+people that helped me.
+Well to the only person who
+helped me and suppoerted
+me , Ahmad Mawardi, big 
+thanks to you bro, for 
+all the ideas and the
+support and the ingame
+music, thx again for playing
+you all, and piece."
+align = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 25 )
+anims/RESET = SubResource( 26 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

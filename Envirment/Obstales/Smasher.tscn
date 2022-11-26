@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Obstacles/Smasher-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Envirment/Obstales/Smasher.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sounds/Obstacles/Falling Smasher.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/Obstacles/Smasher.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11, 12 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 15, 13.5 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -13.5 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Restore"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 13.5 ), Vector2( 0, -13.5 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Smash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 3.605, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -13.5 ), Vector2( 0, 13.5 ) ]
+}
+
+[node name="Smasher" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Container" type="Node2D" parent="."]
+position = Vector2( 0, -13.5 )
+
+[node name="Sprite" type="Sprite" parent="Container"]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Hit" type="Area2D" parent="Container"]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Container/Hit"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 1 )
+
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2( 0, 13.5 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/Restore = SubResource( 2 )
+anims/Smash = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+
+[connection signal="body_entered" from="Container/Hit" to="." method="_on_Hit_body_entered"]
+[connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
